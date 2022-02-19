@@ -1,0 +1,22 @@
+{
+    "destination_addresses" : [ "Rayong, Mueang Rayong District, Rayong, Thailand" ],
+    "origin_addresses" : [ "Bangkok, Thailand" ],
+    "rows" : [
+       {
+          "elements" : [
+             {
+                "distance" : {
+                   "text" : "182 km",
+                   "value" : 182147
+                },
+                "duration" : {
+                   "text" : "2 hours 16 mins",
+                   "value" : 8142
+                },
+                "status" : "OK"
+             }
+          ]
+       }
+    ],
+    "status" : "OK"
+ }
