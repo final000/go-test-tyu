@@ -108,7 +108,7 @@ func praseDirectionMatrixJSONFile(filename string) (DirectionMatrix, error) {
 
 func getDirectionTest() {
 	//url := "https://maps.googleapis.com/maps/api/directions/json?origin=Bangkok&destination=Rayong&key=AIzaSyAWzh2dPlTfViun5CCHavrE3gYv3rBkBGs"
-	url := "https://maps.googleapis.com/maps/api/distancematrix/json?origins='Belle%20Condominium%20Bangkok'&destinations='Bangkok%20Cristian%20Collage'&key=AIzaSyAWzh2dPlTfViun5CCHavrE3gYv3rBkBGs"
+	url := "https://maps.googleapis.com/maps/api/distancematrix/json?origins='Belle%20Condominium%20Bangkok'&destinations='Bangkok%20Cristian%20Collage'&key=<Your Keys>"
 	method := "GET"
 
 	client := &http.Client{}
