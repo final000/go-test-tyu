@@ -15,6 +15,11 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
+type displayCollection interface {
+	display1()
+	display2()
+}
+
 type Distance struct {
 	Text  string `json:"text"`
 	Value int    `json:"value"`
@@ -42,6 +47,10 @@ type DirectionMatrix struct {
 
 const mongoUrl, dbName, collectionName string = "mongodb://localhost:27017", "distanceSet", "distanceMatrix"
 
+func (d Distance) display1() {
+	println(d.Text, d.Value)
+}
+
 func initMongoConnection() *mongo.Client {
 	var client *mongo.Client
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
@@ -50,6 +59,34 @@ func initMongoConnection() *mongo.Client {
 	client, _ = mongo.Connect(ctx, clientOptions)
 
 	return client
+}
+
+func printAndHold(t time.Time) {
+	for i := 0; i <= 3; i++ {
+		time.Sleep(1 * time.Second)
+		fmt.Println("Trigger from time: ", t, " Round: ", i)
+	}
+}
+
+func triggerTest() {
+	ticker := time.NewTicker(time.Second)
+	defer ticker.Stop()
+	//done := make(chan bool)
+	// go func() {
+	// 	time.Sleep(10 * time.Second)
+	// 	done <- true
+	// }()
+	for {
+		// select {
+		// case <-done:
+		// 	fmt.Println("Done!")
+		// 	return
+		// case t := <-ticker.C:
+		// 	go printAndHold(t)
+		// }
+		t := <-ticker.C
+		go printAndHold(t)
+	}
 }
 
 func queryDbAndPrint() {
@@ -134,22 +171,31 @@ func getDirectionTest() {
 	fmt.Println("Return Body = ", string(body))
 }
 
+func refToInterface(dm displayCollection) {
+	dm.display1()
+}
+
 func main() {
-	// fmt.Println(returnStr())
-	// fmt.Println(a111.ReturnStr())
+
 	//getDirectionTest()
-	_, error := praseDirectionMatrixJSONFile("mock_direction_matrix.json")
-	if error != nil {
-		fmt.Println(error)
-		return
-	}
+	// _, error := praseDirectionMatrixJSONFile("mock_direction_matrix.json")
+	// if error != nil {
+	// 	fmt.Println(error)
+	// 	return
+	// }
 
-	//addOnetoMongoDB(directionMatrix)
-	queryDbAndPrint()
+	// //addOnetoMongoDB(directionMatrix)
+	// queryDbAndPrint()
 
-	elements := Elements{
-		Distance: Distance{Text: "t1", Value: 1},
-		Duration: Duration{Text: "t2", Value: 2},
-	}
-	fmt.Println(elements)
+	// elements := Elements{
+	// 	Distance: Distance{Text: "t1", Value: 1},
+	// 	Duration: Duration{Text: "t2", Value: 2},
+	// }
+	// fmt.Println(elements)
+
+	//triggerTest()
+
+	d1 := Distance{Text: "Hello", Value: 123}
+	d1.display1()
+
 }
