@@ -1,14 +1,17 @@
-<mxfile host="app.diagrams.net" modified="2022-03-19T07:23:16.562Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36" etag="M7pcSBBGX1wJdhb6hOcr" version="17.1.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-03-19T07:48:32.891Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36" etag="MkZ8fEuasBE3wwUFgWOA" version="17.1.2" type="github" pages="2">
   <diagram name="Activity" id="e7e014a7-5840-1c2e-5031-d8a46d1fe8dd">
     <mxGraphModel dx="1260" dy="732" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="2" value="Trigger.go" style="swimlane;whiteSpace=wrap" parent="1" vertex="1">
-          <mxGeometry x="720" y="128" width="280" height="472" as="geometry" />
+          <mxGeometry x="440" y="128" width="280" height="472" as="geometry" />
         </mxCell>
         <mxCell id="7" value="Time Trigger" style="" parent="2" vertex="1">
           <mxGeometry x="60" y="110" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="YyGc1D78loFtWHkHlIcI-8" value="&lt;h1&gt;DB needed&lt;/h1&gt;&lt;p&gt;Name: TimeInterval&amp;nbsp;&lt;/p&gt;&lt;p&gt;Field: Time, Date&amp;nbsp;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="2">
+          <mxGeometry x="50" y="176" width="190" height="120" as="geometry" />
         </mxCell>
         <mxCell id="uJfOn_8sjYmz3HBrDXEl-42" value="main.go" style="swimlane;whiteSpace=wrap" vertex="1" parent="1">
           <mxGeometry x="160" y="128" width="280" height="472" as="geometry" />
@@ -34,7 +37,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="uJfOn_8sjYmz3HBrDXEl-50" value="ActionDistanceMatrix.go" style="swimlane;whiteSpace=wrap" vertex="1" parent="1">
-          <mxGeometry x="1000" y="128" width="280" height="472" as="geometry" />
+          <mxGeometry x="720" y="128" width="280" height="472" as="geometry" />
         </mxCell>
         <mxCell id="uJfOn_8sjYmz3HBrDXEl-51" value="Execute" style="" vertex="1" parent="uJfOn_8sjYmz3HBrDXEl-50">
           <mxGeometry x="60" y="110" width="110" height="50" as="geometry" />
@@ -57,8 +60,8 @@
         </mxCell>
         <mxCell id="uJfOn_8sjYmz3HBrDXEl-56" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0;entryX=-0.036;entryY=0.48;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="uJfOn_8sjYmz3HBrDXEl-51">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="790" y="280" as="targetPoint" />
-            <mxPoint x="890" y="262" as="sourcePoint" />
+            <mxPoint x="510" y="280" as="targetPoint" />
+            <mxPoint x="610" y="262" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="uJfOn_8sjYmz3HBrDXEl-62" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0;entryX=-0.024;entryY=0.507;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.012;exitY=0.507;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="uJfOn_8sjYmz3HBrDXEl-61" target="7">
@@ -67,6 +70,20 @@
             <mxPoint x="287.3100000000002" y="297.35" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="YyGc1D78loFtWHkHlIcI-9" value="&lt;h1&gt;DB needed&lt;/h1&gt;&lt;p&gt;Name: LocationPair&amp;nbsp;&lt;/p&gt;&lt;p&gt;Field: Name, Origin, Destination&amp;nbsp;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="280" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="YyGc1D78loFtWHkHlIcI-10" value="&lt;h1&gt;DB needed&lt;/h1&gt;&lt;p&gt;Name: DistanceMatrixResult&amp;nbsp;&lt;/p&gt;&lt;p&gt;Field: Name, Origin, Destination&amp;nbsp;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="460" width="190" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="d6CF7yxuyv1SwLfoii8f" name="Page-2">
+    <mxGraphModel dx="945" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="JRVUUQpy3qnANhzw6xM--0" />
+        <mxCell id="JRVUUQpy3qnANhzw6xM--1" parent="JRVUUQpy3qnANhzw6xM--0" />
       </root>
     </mxGraphModel>
   </diagram>
