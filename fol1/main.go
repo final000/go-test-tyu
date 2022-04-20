@@ -1,4 +1,4 @@
-package followTYU
+package main
 
 import (
 	"context"
@@ -15,6 +15,6 @@ func HandleRequest(ctx context.Context, name MyEvent) (string, error) {
 	return fmt.Sprintf("This is TYU Hello %s!", name.Name), nil
 }
 
-func main() {
+func main2() {
 	lambda.Start(HandleRequest)
 }

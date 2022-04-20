@@ -13,6 +13,9 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
+
+	main3 "thanit/go-test/fol1/subfol1"
+	main2 "thanit/go-test/fol11"
 )
 
 type displayCollection interface {
@@ -61,10 +64,10 @@ func initMongoConnection() *mongo.Client {
 	return client
 }
 
-func printAndHold(t time.Time) {
+func printAndHold(t time.Time, p int) {
 	for i := 0; i <= 3; i++ {
-		time.Sleep(1 * time.Second)
-		fmt.Println("Trigger from time: ", t, " Round: ", i)
+		//time.Sleep(1 * time.Second)
+		fmt.Println("Trigger from time: ", t, "Phase: ", p, " Round: ", i)
 	}
 }
 
@@ -76,7 +79,7 @@ func triggerTest() {
 	// 	time.Sleep(10 * time.Second)
 	// 	done <- true
 	// }()
-	for {
+	for i := 0; i < 10; i++ {
 		// select {
 		// case <-done:
 		// 	fmt.Println("Done!")
@@ -85,8 +88,13 @@ func triggerTest() {
 		// 	go printAndHold(t)
 		// }
 		t := <-ticker.C
-		go printAndHold(t)
+		// go printAndHold(t, i)
+		for j := 0; j <= 3; j++ {
+			//time.Sleep(1 * time.Second)
+			fmt.Println("Trigger from time: ", t, "Phase: ", i, " Round: ", j)
+		}
 	}
+	time.Sleep(2 * time.Second)
 }
 
 func queryDbAndPrint() {
@@ -194,8 +202,12 @@ func main() {
 	// fmt.Println(elements)
 
 	//triggerTest()
+	timeNow := time.Now().Hour()*10000 + time.Now().Minute()*100 + time.Now().Second()
+	fmt.Println(timeNow)
+	// d1 := Distance{Text: "Hello", Value: 123}
+	// d1.display1()
 
-	d1 := Distance{Text: "Hello", Value: 123}
-	d1.display1()
+	fmt.Println(main2.ReturnStr())
+	main3.Fol1main2()
 
 }
