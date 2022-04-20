@@ -1,0 +1,1 @@
+db.distanceMatrixHistory.find({"OriginInfo.placeid":"ChIJPcNw1NpnHTERooilES5f4z4","DestInfo.placeid":"ChIJxTBq5ui84jARVfYB1E1G1iU"},{"OriginInfo.name":1,"DestInfo.name":1,"TravelTimeVal":1,"TravelTimeInTeffricVal":1,"QueryDateTime":1,"QueryTimeofDay":1}).sort({$natural:-1}).limit(20)
